@@ -5,14 +5,10 @@ int fibo(int n){
     }
     else if(n==1){
         return 1;
-
     }
     else{
-      // fibo(n-1)+fibo(n-2);
-     
     return fibo(n-1)+fibo(n-2);   
     }
-
 }
 void fiboprint(int n){
    int i;
@@ -26,7 +22,5 @@ int main(){
     scanf("%d",&n);
     fibo(n);
     fiboprint(n);
-   int result=fibo(n-1)+fibo(n-2);
-
     return 0;
 }

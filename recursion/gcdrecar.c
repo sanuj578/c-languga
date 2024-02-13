@@ -8,7 +8,6 @@ while (b!=0){
    printf("%d",a);
     return ;
 }
-
 int main(){
     int n,m;
     printf("enter the number= ");

@@ -1,17 +1,17 @@
 #include<stdio.h>
-int fa(int n ){
-   // int i, fact =1;
-   // for (i=1;i<=n;i++){
-   //     fact =fact*i;
-   // }
-   if(n==1) return 1;
-    return n*fa(n-1);
+int  fa(int n){
+if(n==1){
+    return 1;
+}
+return n*fa(n-1);
+
 }
 int main(){
     int n;
-    printf("enter the number =");
+    printf("enter the number = ");
     scanf("%d",&n);
-    int fact =fa(n);
-    printf("%d",fact);
+    fa(n);
+    printf("%d",n*fa(n-1));
+    printf("%d",(n*fa(n-1))/8);
     return 0;
 }

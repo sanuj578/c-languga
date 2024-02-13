@@ -1,56 +1,66 @@
 #include<stdio.h>
 int main(){
-	int n,m,i,j;
-		printf("enter the rows =");
-	scanf("%d",&n);
-	printf("enter the column =");
-	scanf("%d",&m);
-	int arr[n][m];
-	int brr[n][m];
-	int crr[i][j];
-	printf(" matrix A= \n");
-	for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-			printf("enter the elements %d*%d=",i+1,j+1);
-			scanf("%d",&arr[i][j]);
-		}
-	}
-	printf("\n");
-	printf(" matrix B= \n ");
-	for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-			printf("enter the elements %d*%d=",i+1,j+1);
-			scanf("%d",&brr[i][j]);
-		}
-	}
-	printf("A matrix=\n");
-	for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-		printf("%d  ",arr[i][j]);	
-		}
-			printf("\n");
-		}
-		printf("B matrix\n");
-	for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-		printf("%d  ",brr[i][j]);	
-		}
-			printf("\n");
-		}
-		
-	for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-		     crr[i][j]=arr[i][j]*brr[i][j];	
-		}
-			
-		}
-		printf("A*B=C\n");
-		for(i=0;i<n;i++){
-		for(j=0;j<m;j++){
-		printf("%d  ",crr[i][j]);	
-		}
-			printf("\n");
-		}
-		
-	return 0;
+    int n, m, i, j, k;
+    
+    printf("Enter the rows for A: ");
+    scanf("%d", &n);
+    
+    printf("Enter the columns for A and rows for B: ");
+    scanf("%d", &m);
+    
+    int arr[n][m];
+    int brr[m][n];
+    int crr[n][n];
+    
+    printf("Matrix A:\n");
+    for(i = 0; i < n; i++){
+        for(j = 0; j < m; j++){
+            printf("Enter element %d*%d: ", i + 1, j + 1);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    
+    printf("Matrix B:\n");
+    for(i = 0; i < m; i++){
+        for(j = 0; j < n; j++){
+            printf("Enter element %d*%d: ", i + 1, j + 1);
+            scanf("%d", &brr[i][j]);
+        }
+    }
+    
+    printf("Matrix A:\n");
+    for(i = 0; i < n; i++){
+        for(j = 0; j < m; j++){
+            printf("%d  ", arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("Matrix B:\n");
+    for(i = 0; i < m; i++){
+        for(j = 0; j < n; j++){
+            printf("%d  ", brr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    // Matrix multiplication
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            crr[i][j] = 0;
+            for(k = 0; k < m; k++){
+                crr[i][j] += arr[i][k] * brr[k][j];
+            }
+        }
+    }
+    
+    printf("Matrix C (Result of A*B):\n");
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            printf("%d  ", crr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
 }
